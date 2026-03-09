@@ -1,3 +1,3 @@
-n1 = input("digite um número ")
+conta = 4 ** 2 // 12 * 3 + 5
 
-print(n1)
+print(conta)
