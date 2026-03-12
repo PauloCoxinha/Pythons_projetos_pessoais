@@ -1,11 +1,11 @@
-#numero = int(input("Digite um número"))
+numero = int(input("Digite um número"))
 
-#def contador(n):
-   # while n > 0:
-  #      print(n)
- #       n -= 1
+def contador(n):
+    while n > 0:
+        print(n)
+        n -= 1
 
-#contagem = contador(numero)
+contagem = contador(numero)
 
 
 

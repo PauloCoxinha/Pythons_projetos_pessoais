@@ -4,6 +4,7 @@ class Canal:
         self.descricao = descricao
         self.inscritos = inscritos
         self.videos = []
+        self.data_publicacao:list[Playlist] =  []
 
 
     def inscrever(self, quantidade=1):
@@ -14,6 +15,11 @@ class Canal:
             print("Esse video ja foi postado")
             return   
         self.videos.append(video)
+
+    def info_playlists(self):
+        for playlist in self.playlists:
+            print(playlist.nome)
+            playlist.info_videos()
 
 
 class CanalEmpresarial(Canal):
@@ -36,6 +42,8 @@ class CanalEmpresarial(Canal):
             self._equipe.remove(membro)
         else: 
             print("O membro não está na equipe")
+
+    
     
 canal_kositis = Canal('Kositis', 'Amo minha vida', 9000)
 canal_lancode = Canal('lancode', 'gatos', 1500)
@@ -52,6 +60,7 @@ class Video:
         self.likes = 0
         self.deslikes = 0
         self.comentarios = []
+
 
     def __repr__(self):
         return f"<{self.nome}>"
@@ -77,6 +86,29 @@ class Video:
         print(self.deslikes)
         print(self.comentarios.__len__)
 
+class Playlist:
+    def __init__(self, nome):
+        self.nome = nome
+
+        self.videos:list[Video] = []
+
+    def adicionar_video(self, video):
+        if video not in self.videos:
+            self.videos.append(video)
+        else:
+            print("Esse video já esta na playlist")
+
+    def remover_video(self, video):
+        if video in self.videos:
+            self.video.remove(video)
+        else:
+            print(f"Esse video não está na playlist")
+
+    def info_video(self):
+        for video in self.videos:
+            video.info()
+
+
 video_poo = Video('Python objeto', 'aprenda agora')
 video_poo.dar_like()
 
@@ -86,9 +118,30 @@ video_discord_python.dar_like()
 
 video_discord_python.comentar('Bom video cara')
 
+
+
 canal_kositis.postar(video_discord_python)
+
+playlist_programacao = Playlist('programacao')
+playlist_programacao.adicionar_video(video_poo)
+playlist_discord = Playlist('Chatbots')
+playlist_discord.adicionar_video(video_discord_python)
+
+video_minecraft = Video('Jogano Minezin', 'Mine')
+video_deltarune = Video('Jogando deltarune', 'Deltarune')
+playlist_games = Playlist('Games')
+playlist_games.adicionar_video(video_minecraft)
+playlist_games.adicionar_video(video_deltarune)
 
 canal_kositis.postar(video_poo)
 
+canal_kositis.postar(video_minecraft)
+
+canal_kositis.postar(video_deltarune)
+
+
+
 print(canal_kositis.videos)
+
+print(canal_kositis.info_playlists)
         

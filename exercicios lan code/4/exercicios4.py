@@ -16,11 +16,11 @@ while contador <= 10:
     contador += 1
 
 
-numeros = [1, 4, 6, 3, 2, 7, 9]
+numero = [1, 4, 6, 3, 2, 7, 9]
 
-for n in numeros:
+for n in numero:
     if n % 2 != 0:
-        continue
+        continue    
     print(f"O número {n} é par")
 
 
