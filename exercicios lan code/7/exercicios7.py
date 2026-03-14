@@ -31,7 +31,7 @@
 try:
     idade = int(input("Qual a sua idade? "))
     if idade < 0:
-        raise Exception("Digite um idade válida")
+        raise ValueError("Digite um idade válida")
 except Exception as erro:
     print(f"Erro: {erro}")
 else:
