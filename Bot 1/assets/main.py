@@ -3,7 +3,16 @@ from discord.ext import commands, tasks
 import os 
 from dotenv import load_dotenv
 from pathlib import Path
-from datetime import time 
+import datetime, pytz
+
+
+dt = datetime.datetime.now(tz=pytz.timezone('America/Sao_Paulo'))
+fuso_horario = dt.tzinfo
+horario = datetime.time(20, 3, tzinfo=fuso_horario)
+
+intents = discord.Intents.all()
+
+bot = commands.Bot(".", intents=intents)
 
 env_path = Path(__file__).parent / ".env"
 
@@ -11,18 +20,15 @@ load_dotenv(dotenv_path=env_path)
 
 TOKEN = os.getenv("DISCORDIO_TOKEN")
 
-if TOKEN is None:
-    raise ValueError("Token não encontrado no .env")
+try:
+    if TOKEN:
+        print("Tá funfando")
+except:
+    if TOKEN is None:
+        raise ValueError("Token não encontrado no .env")
 
-print("Variáveis carregadas:", os.environ)
-print("TOKEN:", os.getenv("DISCORDIO_TOKEN")) 
 
-print(f"TOKEN RAW:", repr(TOKEN))
 
-print(f"token : {TOKEN}")
-
-intents = discord.Intents.all()
-bot = commands.Bot(".", intents=intents)
 
 
 @bot.event
@@ -60,7 +66,11 @@ async def somar(ctx:commands.Context, num1:int, num2:int):
     resultado = num1 + num2
     await ctx.send(f"A soma entre os números digitados é: {resultado}")
 
-@tasks.loop(seconds=10)
+@tasks.loop(time=horario)
 async def enviar_mensagem():
+    canal = bot.get_channel(1415696880138195036)  
+    await canal.send(f"Oi, por acaso sua mãe sabe q vc gosta de rapazes?")
+         
+
 
 bot.run(TOKEN) 
