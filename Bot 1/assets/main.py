@@ -34,6 +34,8 @@ except:
 #Aqui inicia o bot e dps ele manda uma mensagem falando q iniciou
 @bot.event
 async def on_ready():
+    sincs = await bot.tree.sync()
+    print(f"{len(sincs)} comandos sincronizados!")
     enviar_mensagem.start()
     print("Bot inicializado bitch")
 #ESSA FUNÇÃO FAZ COM QUE O BOT MANDE UMA MENSAGEM TODA VEZ Q VC DIGITAR .OLA
@@ -78,15 +80,20 @@ async def enviar_embed(ctx:commands.Context):
     minha_embed.title = "Titulo mt criativo pra quem n tem nada"
     minha_embed.description = "Minha descrição superior"
 
-
+# tive que criar o caminho base, para achar a imagem pq o jeito tradicional não estava ajudando
     caminho_base = os.path.dirname(__file__ )
     caminho_imagem = os.path.join(caminho_base, "img", "72.jpg")
     imagem = discord.File(caminho_imagem, "Safada.jpg")
 
     minha_embed.set_image(url="attachment://Safada.jpg" )
-
+    minha_embed.set_thumbnail(url="attachment://Safada.jpg" )
+    minha_embed.set_footer(text="Esse é o do por que vc não deveria ter amigos")
+    minha_embed.set_author(text="Paulo Kositis", icon_url="https://64.media.tumblr.com/eccaaf1f8ae22c61c9221fa6b8eaf6c4/0de171170e7d6eeb-73/s400x600/30cf93a9ad2727b6c7fc460ce6065668ebd7fe26.jpg")
     await ctx.reply(embed=minha_embed, file=imagem)
 
+@bot.tree.command()
+async def ola(interact=discord.Interaction):
+    await interact.response.send_message(f"Olá, {interact.user.name}", ephemeral=True)
 
 
          
