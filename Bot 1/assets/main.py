@@ -81,7 +81,7 @@ async def enviar_embed(ctx:commands.Context):
     minha_embed.description = "Minha descrição superior"
 
 # tive que criar o caminho base, para achar a imagem pq o jeito tradicional não estava ajudando
-    caminho_base = os.path.dirname(__file__ )
+    caminho_base = os.path.dirname(__file__)
     caminho_imagem = os.path.join(caminho_base, "img", "72.jpg")
     imagem = discord.File(caminho_imagem, "Safada.jpg")
 
@@ -89,6 +89,7 @@ async def enviar_embed(ctx:commands.Context):
     minha_embed.set_thumbnail(url="attachment://Safada.jpg" )
     minha_embed.set_footer(text="Esse é o do por que vc não deveria ter amigos")
     minha_embed.set_author(text="Paulo Kositis", icon_url="https://64.media.tumblr.com/eccaaf1f8ae22c61c9221fa6b8eaf6c4/0de171170e7d6eeb-73/s400x600/30cf93a9ad2727b6c7fc460ce6065668ebd7fe26.jpg")
+    ## n quuero perder ofensiva de commit 
     await ctx.reply(embed=minha_embed, file=imagem)
 
 @bot.tree.command()
