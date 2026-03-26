@@ -1,0 +1,3 @@
+conta = 4 ** 2 // 12 * 3 + 5
+
+print(conta)
