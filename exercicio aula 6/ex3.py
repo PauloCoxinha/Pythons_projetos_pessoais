@@ -14,9 +14,15 @@ margens = [
 for min, maximo, porc in margens:
     if min <= saldo <= maximo:
         porcentagem = saldo * porc
-        valorfinal = porcentagem + saldo
+        
 
-        print(f"O seu valor de crédito é de: {valorfinal:.2f}")
+
+        #MANO EU N SEI OQ ACONTECEU MAS O CÓDIGO QUEBROU
+
+        print(f"O seu valor de crédito é de: {porcentagem:.2f}")
+
+
+#receba o gap mano, n vouu perder a streak nem tenta
 
 
 
