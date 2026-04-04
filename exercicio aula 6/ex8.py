@@ -1,7 +1,7 @@
 tempo = int(input("Quantos dias voce passou no hospital? "))
-quarto_tempo = input("e que tipo de quarto voce dormiu? SP, P, C ")
-wifi = input("Você usou wi-fi? sim ou não?")
-tv = input("E tv a cabo? sim ou não?")
+quarto_tempo = input("e que tipo de quarto voce dormiu? SP, P, C ").upper()
+wifi = input("Você usou wi-fi? sim ou não? ")
+tv = input("E tv a cabo? sim ou não? ")
 
 wifi_preco = 4
 
@@ -13,11 +13,23 @@ quartos = {
     'C': 185
 }
 
-for chave, a in quartos:
-    if chave == quarto_tempo:
-        operacao = tempo * a 
-        if wifi == 'sim' and tv == 'sim':
-            soma = wifi_preco + tv_preco
-            total = operacao + soma
-            print(f"Sua conta é de {total}")
+
+valor_real = quartos[quarto_tempo]
+
+operacao = tempo * valor_real
+if wifi == 'sim' and tv == 'sim':
+    soma = wifi_preco + tv_preco
+    total = operacao + soma
+elif wifi == 'não' and tv == 'sim':
+     soma = tv_preco
+     total = operacao + soma
+elif wifi == 'sim' and tv == 'não':
+     soma = wifi_preco
+     total = operacao + soma
+else:
+     soma = 0
+     total = operacao + soma
+
+
+print(f"Sua conta é de {total}")
 
