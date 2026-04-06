@@ -8,7 +8,7 @@ numero = int(input("Escreva uma temperatura (ela vai interpretada como Celsius, 
 
 
 def Fahrenheit():
-    conversaoFah = numero * 1.8 + 30
+    conversaoFah = numero * 1.8 + 32    
 
     return conversaoFah
 

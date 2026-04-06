@@ -23,3 +23,4 @@ print(not not True)
 
 # Crie na Shell do Python as variáveis a seguir: a = 4; b = 10; c = 50; d = 1; e = 5. Em seguida faça a avaliação das seguintes expressões (tente antecipar o resultado da Shell): 
 
+
