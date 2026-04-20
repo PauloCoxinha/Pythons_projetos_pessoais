@@ -21,3 +21,8 @@ elif escolha_maiuscula == 'F':
 
 else:
     print("Você deve estar se achando o sabichão por pular as instruções né")
+
+
+
+
+    #to praticando banco de dados, colloquei essa mensagem pra n perder a droga da streak do github xD

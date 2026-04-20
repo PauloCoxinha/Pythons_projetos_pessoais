@@ -11,7 +11,7 @@ numerosArrumados = numerosAntesDaOrdem.sort(reverse=True)
 print(f"essa é sua ordem: {numerosAntesDaOrdem}")
 
 
-## modo 2 
+## modo 2 é um sort só que feito a mão
 
 
 for numero in range(len(numerosAntesDaOrdem)):

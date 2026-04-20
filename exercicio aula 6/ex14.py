@@ -33,3 +33,5 @@ def trianguloReal(valor1, valor2, valor3):
         elif valor1 != valor2 and valor1 != valor3 and valor2 != valor3:
             tipoDeTriangulo = 'Triangulo Escaleno'
             print(tipoDeTriangulo)
+    else:
+        print("Não pode ser triangulo")
