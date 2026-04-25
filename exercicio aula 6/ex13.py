@@ -8,9 +8,6 @@ c = float(input("Ultimo numero real"))
 if a == 0:
     print(f"Não pode ser equação de segundo grau")
 
-
-
-
 def delta1():
     bQuadrado = b ** 2 
     delta = bQuadrado - 4 * a * c 
@@ -35,6 +32,6 @@ x1 = (-b + math.sqrt(d)) / (2 * a)
 
 x2 = (-b - math.sqrt(d)) / (2 * a)
 
-print(x1)
+print(f"o valor da raiz quadrada positiva é de: {x1}")
 
-print(x2)
+print(f"o valor da raiz quadrada negativa é de: {x2}")

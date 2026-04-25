@@ -17,7 +17,7 @@ metodosDePagamento = {
     },
     4: {
         'tipo': 'À vista no cartão de crédito',
-        'desconto': produto * 1.05
+        'desconto': produto * 1.10
     }
 }
 
