@@ -68,8 +68,10 @@ class Video:
     def assistir(self):
         self.visualizacoes += 1
 
+
     def dar_like(self):
         self.likes += 1
+        
 
     def dar_deslike(self):
         self.deslikes += 1
@@ -82,7 +84,7 @@ class Video:
         print(self.nome)
         print(self.descricao)
         print(self.visualizacoes)
-        print(self.likes)
+        print(f"você tem {self.likes} likes")
         print(self.deslikes)
         print(self.comentarios.__len__)
 
@@ -117,6 +119,17 @@ video_discord_python = Video('Discord bots', 'Aprenda a como criar bots para o d
 video_discord_python.dar_like()
 
 video_discord_python.comentar('Bom video cara')
+
+
+
+video_discord_python.dar_like()
+video_discord_python.dar_like()
+video_discord_python.dar_like()
+video_discord_python.dar_like()
+video_discord_python.dar_like()
+video_discord_python.dar_like()
+
+video_discord_python.mostrar()
 
 
 
